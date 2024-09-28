@@ -16,6 +16,12 @@ notes = []
 #configing a secret key
 app.config['key'] = 'secretKey'
 
+UPLOAD_FOLDER = 'uploads' #creates the directory
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+#if the folder does not exist create one
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 #allow us to render an index HTML5 file for user
 @app.route('/')
 def index():
@@ -39,7 +45,7 @@ def add_note():
 def uploadingFile():
     if 'file' not in request.files:
         return "No file found"
-    inFile = request.files['files']
+    inFile = request.files['file']
     if inFile.filename == '':
         return "No File Selected"
     if inFile:
