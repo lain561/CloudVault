@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Japanese 3017';
+    font-family: 'GameOfSquids';
     src: url('fonts/GameOfSquids.ttf') format('truetype'),
          url('fonts/GameOfSquids.otf') format('opentype');
 }
@@ -8,30 +8,77 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
 }
 
 body{
-    background-image: linear-gradient(to bottom, #002c58, #dbdfe2); 
+    background-image: linear-gradient(to bottom, #002c58, aliceblue); 
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    color: white; 
+    color: aliceblue;
     font-family: Arial, sans-serif;
 }
 
+.landing{
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;   
+    position: relative;
+    top: -70px;
+    text-align: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
 .name{
-    text-align: center;
-    font-family: 'Japanese 3017';
-    font-size: 4.5rem;
+    font-size: 8rem;
     margin-bottom: 0;
 }
 
 .slogan{
-    text-align: center;
+    margin-top: 0;
+    font-size: 2rem;
 }
 
-.buttons{
+.name, .slogan{
     text-align: center;
-    margin-top: 2rem;
+    transition: .2s;
+    transition-timing-function: ease;
+}
+
+button {
+    border-radius:20px;
+
+}
+
+.name, .logo-name{
+    font-family: 'GameOfSquids';
+}
+
+.logo-name{
+    display: flex;
+    align-items: center;    
+    margin-top: 1rem;
+}
+
+.logo-name a{
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 1;
+    font-size: 1.6rem;
+}
+
+.logo-name img{
+    margin-left: 24px;
+    padding-right: 16px;
+    width: 50px;
+}
+
+
+@keyframes fadeIn {
+    100% {opacity: 100%; transform: translateY(10px);}
 }

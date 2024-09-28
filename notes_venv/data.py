@@ -39,7 +39,7 @@ def add_note():
 def uploadingFile():
     if 'file' not in request.files:
         return "No file found"
-    inFile = request.files['files']
+    inFile = request.files['file']
     if inFile.filename == '':
         return "No File Selected"
     if inFile:
