@@ -12,19 +12,24 @@ html, body{
 }
 
 body{
-    background-image: linear-gradient(to bottom, #002c58, aliceblue); 
+    background-image: linear-gradient(to bottom, #0043a0, rgba(204, 204, 204, 0.663)); 
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    color: aliceblue;
     font-family: Arial, sans-serif;
+}
+
+h1, h3, p, a, img, label{
+    color: aliceblue; 
+    text-shadow: 0 0 10px aliceblue; 
+    font-weight: 1;
 }
 
 .landing{
     opacity: 0;
     animation: fadeIn 1.5s forwards;   
     position: relative;
-    top: -70px;
+    top: -100px;
     text-align: center;
     text-align: center;
     display: flex;
@@ -35,12 +40,13 @@ body{
 }
 
 .name{
+    letter-spacing: 5px;
     font-size: 8rem;
     margin-bottom: 0;
 }
 
 .slogan{
-    margin-top: 0;
+    margin-top: -15px;
     font-size: 2rem;
 }
 
@@ -55,18 +61,20 @@ button {
 
 }
 
-.name, .logo-name{
+.name, .logo-name, .slogan{
     font-family: 'GameOfSquids';
 }
 
 .logo-name{
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;   
+    position: relative;
     display: flex;
     align-items: center;    
     margin-top: 1rem;
 }
 
 .logo-name a{
-    color: aliceblue;
     text-decoration: none;
     font-weight: 1;
     font-size: 1.6rem;
