@@ -21,6 +21,10 @@ app.config['key'] = 'secretKey'
 def index():
     return render_template('index.html', notes=notes)
 
+@app.route('/pages')
+def another():
+    return render_template('subFolder/upload.html')
+
 #redirects the POST to index (I think?)
 @app.route('/add', methods=['POST'])
 def add_note():
@@ -43,27 +47,6 @@ def uploadingFile():
         inFile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return "File Upload Complete"
 
-# make sure to pip install flask-login  
-# set up user login/logout routes 
-login_manager = LoginManager()
-login_manager.init_app(app)
-
-#file size limitation to 16 MB
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-
-#dummy user class
-class user(UserMixin):
-    pass
-
-#class definition for USER
-class User(UserMixin):
-    def init(self, id):
-        self.id = id
-
-#login manager stuff
-def load_user(user_id):
-    return User.get(user_id)
-
 #HTTPS stuff
 Talisman(app)
 
@@ -81,4 +64,5 @@ logging.basicConfig(level = logging.INFO)
 
 
 if __name__ == '__main__':
-    app.run() #just debugging..not needed? Kinda just left this here
+    app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True) #just debugging..not needed? Kinda just left this here
+#I think we need an SSL? not sure...
