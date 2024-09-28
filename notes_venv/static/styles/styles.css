@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Japanese 3017';
-    src: url('fonts/game_of_squids/GameOfSquids.ttf') format('truetype'),
-         url('fonts/game_of_squids/GameOfSquids.otf') format('opentype');
+    src: url('fonts/GameOfSquids.ttf') format('truetype'),
+         url('fonts/GameOfSquids.otf') format('opentype');
 }
 
 html, body{
