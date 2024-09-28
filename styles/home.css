@@ -5,8 +5,10 @@ html, body{
 }
 
 body{
-    background-color: #001f3f;
     background-image: linear-gradient(to bottom, #002c58, #dbdfe2); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: white; 
     font-family: Arial, sans-serif;
 }
@@ -14,7 +16,8 @@ body{
 
 .name{
     text-align: center;
-    
+    font-size: 4.5rem;
+    margin-bottom: 0;
 }
 
 .slogan{
