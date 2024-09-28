@@ -8,16 +8,11 @@ from flask_talisman import Talisman #this allows us to run over HTTPS
 from flask import flash
 import logging
 
-app = Flask(__name__)
-
-# In-memory storage for notes (for simplicity)
-notes = []
-
-#configing a secret key
-app.config['key'] = 'secretKey'
+#initialize flask application and then refer the instance as app
+app = Flask(__name__) 
 
 UPLOAD_FOLDER = 'uploads' #creates the directory
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER #configer an upload folder for where we can store the uploads sent from the HTML file upload
 
 #if the folder does not exist create one
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -25,19 +20,12 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 #allow us to render an index HTML5 file for user
 @app.route('/')
 def index():
-    return render_template('index.html', notes=notes)
+    return render_template('index.html')
 
+#routing for our sub-pages on the website
 @app.route('/pages')
 def another():
     return render_template('subFolder/upload.html')
-
-#redirects the POST to index (I think?)
-@app.route('/add', methods=['POST'])
-def add_note():
-    note = request.form.get('note')
-    if note:
-        notes.append(note)
-    return redirect(url_for('index'))
 
 
 #file uploading handling, we will set a limit to 16 MB for now
@@ -50,7 +38,7 @@ def uploadingFile():
         return "No File Selected"
     if inFile:
         filename = secure_filename(inFile.filename)
-        inFile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        inFile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename)) #we can save this crap to the uploads folder
         return "File Upload Complete"
 
 #HTTPS stuff
@@ -70,5 +58,4 @@ logging.basicConfig(level = logging.INFO)
 
 
 if __name__ == '__main__':
-    app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True) #just debugging..not needed? Kinda just left this here
-#I think we need an SSL? not sure...
+    app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True) #I created a self-certificate for HTTPS. We now save SSL implemented
