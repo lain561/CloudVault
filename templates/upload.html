@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css"> <!-- Link to your CSS -->
+    <title>Upload File</title>
 </head>
 <body>
-    
+    <div class="upload-container">
+        <h1>Upload Your File</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="file">Choose a file to upload:</label>
+            <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png, .pdf" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
 </body>
 </html>
