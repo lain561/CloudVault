@@ -13,6 +13,9 @@ app = Flask(__name__)
 # In-memory storage for notes (for simplicity)
 notes = []
 
+#configing a secret key
+app.config['key'] = 'secretKey'
+
 #allow us to render an index HTML5 file for user
 @app.route('/')
 def index():
@@ -25,6 +28,7 @@ def add_note():
     if note:
         notes.append(note)
     return redirect(url_for('index'))
+
 
 #file uploading handling, we will set a limit to 16 MB for now
 @app.route('/upload', methods = ['POST'])
@@ -75,8 +79,6 @@ def permittedFiles(filename):
 #keeping track of uploads and errors that occur
 logging.basicConfig(level = logging.INFO)
 
-#providing feedback to users
-flash('FILE UPLOAD SUCESSFULL')
 
 if __name__ == '__main__':
-    app.run(debug=True) #just debugging..not needed? Kinda just left this here
+    app.run() #just debugging..not needed? Kinda just left this here
