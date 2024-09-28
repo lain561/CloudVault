@@ -1,0 +1,11 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-form{
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}

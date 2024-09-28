@@ -29,8 +29,7 @@ h1, h3, p, a, img, label{
     opacity: 0;
     animation: fadeIn 1.5s forwards;   
     position: relative;
-    top: -100px;
-    text-align: center;
+    top: -120px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -56,35 +55,56 @@ h1, h3, p, a, img, label{
     transition-timing-function: ease;
 }
 
-button {
-    border-radius:20px;
-
-}
-
 .name, .logo-name, .slogan{
     font-family: 'GameOfSquids';
 }
 
-.logo-name{
+.navbar {
+    font-family: 'GameOfSquids';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     opacity: 0;
     animation: fadeIn 1.5s forwards;   
-    position: relative;
-    display: flex;
-    align-items: center;    
-    margin-top: 1rem;
+    transition: 0.2s;
+    transition-timing-function: ease;
 }
 
-.logo-name a{
-    text-decoration: none;
+
+.logo-name{
+    display: flex;
+    align-items: center;    
+    padding-right:16px;
+    padding-left:16px;
+}
+
+.navbar-links ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav li{
+    padding: 0 30px;
+}
+
+nav a{
     font-weight: 1;
-    font-size: 1.6rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block;
+}
+
+.footer-content p{
+    color: rgb(0, 0, 255);
+    font-size: 9rem;
 }
 
 .logo-name img{
-    margin-left: 24px;
-    padding-right: 16px;
-    width: 50px;
+    width: 30%;
+    padding-right: 15px;
 }
+
 
 
 @keyframes fadeIn {
