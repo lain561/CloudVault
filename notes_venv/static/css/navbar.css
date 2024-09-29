@@ -33,11 +33,6 @@ nav a{
     display: block;
 }
 
-.footer-content p{
-    color: rgb(0, 0, 255);
-    font-size: 9rem;
-}
-
 .logo-name img{
     width: 30%;
     padding-right: 15px;
