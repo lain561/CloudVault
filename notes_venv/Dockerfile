@@ -21,8 +21,9 @@ COPY templates /app/templates/
 COPY templates /app/templates/subFolder/
 
 #copying CSS
-COPY static /app/static/
-COPY static /app/static/fonts
+COPY static /app/static/css
+COPY static /app/static/images
+COPY static /app/static/css/fonts
 
 RUN  pip install -r requirements.txt --user
 
