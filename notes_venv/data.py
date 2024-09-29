@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 import os
 from werkzeug.utils import secure_filename
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required
-#from flask_talisman import Talisman 
 #make sure to pip install flask-talisman
 
 from flask import flash
