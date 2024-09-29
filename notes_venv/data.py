@@ -66,6 +66,6 @@ logging.basicConfig(level = logging.INFO)
 
 if __name__ == "__main__":
     try:
-        app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5000)
+        app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5500)
     except Exception as e:
         print(f"Error starting server: {e}") #I created a self-certificate for HTTPS. We now save SSL implemented
