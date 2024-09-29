@@ -57,6 +57,20 @@ main{
     transition-timing-function: ease;
 }
 
+.footer{
+    padding: 1rem, 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    justify-content: center;
+    text-align: center;
+}
+.footer p{
+    color: gray;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
 .name, .logo-name, .slogan{
     font-family: 'GameOfSquids';
 }
