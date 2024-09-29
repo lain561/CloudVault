@@ -42,13 +42,13 @@ main{
 
 .name{
     letter-spacing: 5px;
-    font-size: 8rem;
+    font-size: 7rem;
     margin-bottom: 0;
 }
 
 .slogan{
     margin-top: -15px;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .name, .slogan{
