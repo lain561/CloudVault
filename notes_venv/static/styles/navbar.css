@@ -1,0 +1,48 @@
+.navbar {
+    font-family: 'GameOfSquids';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;   
+    transition: 0.2s;
+    transition-timing-function: ease;
+}
+
+.logo-name{
+    display: flex;
+    align-items: center;    
+    padding-right:16px;
+    padding-left:16px;
+}
+
+.navbar-links ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav li{
+    padding: 0 30px;
+}
+
+nav a{
+    font-weight: 1;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block;
+}
+
+.footer-content p{
+    color: rgb(0, 0, 255);
+    font-size: 9rem;
+}
+
+.logo-name img{
+    width: 30%;
+    padding-right: 15px;
+}
+
+@keyframes fadeIn {
+    100% {opacity: 100%; transform: translateY(10px);}
+}
