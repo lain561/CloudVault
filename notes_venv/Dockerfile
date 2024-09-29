@@ -3,6 +3,9 @@ FROM cgr.dev/chainguard/wolfi-base
 ARG version=3.12
 WORKDIR /app
 
+# Define the volume
+VOLUME ["/app/Vuploads"]
+
 RUN apk add python-${version} py${version}-pip && \
 	chown -R nonroot.nonroot /app/
 
@@ -27,6 +30,9 @@ COPY templates /app/templates/subFolder/
 COPY static/css /app/static/css/
 COPY static/images /app/static/images/
 COPY static/css/fonts /app/static/css/fonts/
+
+#health check
+HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1
 
 #only install the files needed
 RUN  pip install -r requirements.txt --user
