@@ -28,11 +28,11 @@ def index():
 
 #routing for our sub-pages on the website
 @app.route('/uploading')
-def another():
+def uploadStuff():
     return render_template('subFolder/upload.html')
 
 @app.route('/about')
-def another2():
+def aboutStuff():
     return render_template('subFolder/about.html')
 
 @app.route('/idx')

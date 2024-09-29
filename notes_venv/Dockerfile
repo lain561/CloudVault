@@ -10,7 +10,7 @@ RUN apk add python-${version} py${version}-pip && \
 COPY certificate.pem /app/
 COPY private_key.pem /app/
 
-#USER nonroot
+USER nonroot
 COPY requirements.txt data.py /app/
 
 #uploads directory
