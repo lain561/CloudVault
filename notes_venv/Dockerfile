@@ -10,7 +10,10 @@ RUN apk add python-${version} py${version}-pip && \
 COPY certificate.pem /app/
 COPY private_key.pem /app/
 
+#minimum permissions to run
 USER nonroot
+
+#copy the requirements that are only needed 
 COPY requirements.txt data.py /app/
 
 #uploads directory
@@ -25,6 +28,8 @@ COPY static/css /app/static/css/
 COPY static/images /app/static/images/
 COPY static/css/fonts /app/static/css/fonts/
 
+#only install the files needed
 RUN  pip install -r requirements.txt --user
 
+#settings a defined entry point
 ENTRYPOINT [ "python", "data.py" ]

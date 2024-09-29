@@ -9,7 +9,7 @@ import logging
 
 #we want to put some restrictions on imports of certain files types
 #for now lets just work on PNG and JPG
-EXTENSIONS = {'png', 'jpg', 'txt'}
+EXTENSIONS = {'png', 'jpg', 'txt', 'pdf', 'doc', 'docx', 'zip', 'tar', 'rar'}
 
 #initialize flask application and then refer the instance as app
 app = Flask(__name__) 
@@ -65,6 +65,6 @@ logging.basicConfig(level = logging.INFO)
 
 if __name__ == "__main__":
     try:
-        app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5500)
+        app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5500) #I created a self-certificate for HTTPS. We now save SSL implemented
     except Exception as e:
-        print(f"Error starting server: {e}") #I created a self-certificate for HTTPS. We now save SSL implemented
+        print(f"Error starting server: {e}") 
