@@ -2,19 +2,17 @@ from flask import Flask, render_template, request, redirect, url_for
 import os
 from werkzeug.utils import secure_filename
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required
-#make sure to pip install flask-talisman
-
 from flask import flash
 import logging
 
 #we want to put some restrictions on imports of certain files types
-#for now lets just work on PNG and JPG
 EXTENSIONS = {'png', 'jpg', 'txt', 'pdf', 'doc', 'docx', 'zip', 'tar', 'rar'}
 
 #initialize flask application and then refer the instance as app
 app = Flask(__name__)
 
-app.secret_key = 'your_secret_key'
+#secret key for flash
+app.secret_key = 'some_key'
 
 UPLOAD_FOLDER = 'uploads' #creates the directory
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER #configer an upload folder for where we can store the uploads sent from the HTML file upload
@@ -42,6 +40,7 @@ def index2():
 
 
 #file uploading handling, we will set a limit to 16 MB for now
+#we'll refresh the page after upload to the user can easily upload again
 @app.route('/upload', methods = ['GET', 'POST'])
 def uploadingFile():
     if 'file' not in request.files:
@@ -71,6 +70,6 @@ logging.basicConfig(level = logging.INFO)
 
 if __name__ == "__main__":
     try:
-        app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5500) #I created a self-certificate for HTTPS. We now save SSL implemented
+        app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5500) #I created a self-certificate for HTTPS. We now have SSL implemented
     except Exception as e:
-        print(f"Error starting server: {e}") 
+        print(f"Error: {e}") 

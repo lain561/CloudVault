@@ -34,9 +34,9 @@
                 <button type="submit">Upload</button>
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
-                        const message = "{{ get_flashed_messages()[0] }}";  // Get the flashed message
+                        const message = "{{ get_flashed_messages()[0] }}";  // getting the flash message after they upload a file
                         if (message) {
-                            alert(message);  // Show an alert popup
+                            alert(message);  // pops up an alert if whatever message is sent
                         }
                     });
                 </script>

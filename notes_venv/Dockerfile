@@ -1,3 +1,7 @@
+# what we use wolfi for in here:
+# Minimal base images, the use of a non-root user, 
+# and a focus on only including necessary components.
+
 FROM cgr.dev/chainguard/wolfi-base
 
 ARG version=3.12
