@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 import os
 from werkzeug.utils import secure_filename
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required
-#from flask_talisman import Talisman 
 #make sure to pip install flask-talisman
 
 from flask import flash
@@ -10,7 +9,7 @@ import logging
 
 #we want to put some restrictions on imports of certain files types
 #for now lets just work on PNG and JPG
-EXTENSIONS = {'png', 'jpg', 'txt'}
+EXTENSIONS = {'png', 'jpg', 'txt', 'pdf', 'doc', 'docx', 'zip', 'tar', 'rar'}
 
 #initialize flask application and then refer the instance as app
 app = Flask(__name__) 
@@ -28,11 +27,11 @@ def index():
 
 #routing for our sub-pages on the website
 @app.route('/uploading')
-def another():
+def uploadStuff():
     return render_template('subFolder/upload.html')
 
 @app.route('/about')
-def another2():
+def aboutStuff():
     return render_template('subFolder/about.html')
 
 @app.route('/idx')
@@ -66,6 +65,6 @@ logging.basicConfig(level = logging.INFO)
 
 if __name__ == "__main__":
     try:
-        app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5500)
+        app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5500) #I created a self-certificate for HTTPS. We now save SSL implemented
     except Exception as e:
-        print(f"Error starting server: {e}") #I created a self-certificate for HTTPS. We now save SSL implemented
+        print(f"Error starting server: {e}") 
