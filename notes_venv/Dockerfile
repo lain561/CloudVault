@@ -3,7 +3,7 @@ FROM cgr.dev/chainguard/wolfi-base
 ARG version=3.12
 WORKDIR /app
 
-# Define the volume
+# Define the volume, this will allow us to store the files even after the container stops running
 VOLUME ["/app/Vuploads"]
 
 RUN apk add python-${version} py${version}-pip && \
