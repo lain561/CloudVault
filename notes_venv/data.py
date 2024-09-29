@@ -14,6 +14,8 @@ EXTENSIONS = {'png', 'jpg', 'txt', 'pdf', 'doc', 'docx', 'zip', 'tar', 'rar'}
 #initialize flask application and then refer the instance as app
 app = Flask(__name__)
 
+app.secret_key = 'your_secret_key'
+
 UPLOAD_FOLDER = 'uploads' #creates the directory
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER #configer an upload folder for where we can store the uploads sent from the HTML file upload
 
@@ -40,19 +42,23 @@ def index2():
 
 
 #file uploading handling, we will set a limit to 16 MB for now
-@app.route('/upload', methods = ['POST'])
+@app.route('/upload', methods = ['GET', 'POST'])
 def uploadingFile():
     if 'file' not in request.files:
-        return "No file found"
+        flash('No file found')
+        return redirect(url_for('uploadStuff'))
     inFile = request.files['file']
     if inFile.filename == '':
-        return "No File Selected"
+        flash('No File Selected')
+        return redirect(url_for('uploadStuff'))
     if not permittedFiles(inFile.filename): #call a function that check to see if the file is allowed to upload
-        return "File not Allowed"
+        flash('File not Allowed')
+        return redirect(url_for('uploadStuff'))
     if inFile:
         filename = secure_filename(inFile.filename)
         inFile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename)) #we can save this crap to the uploads folder
-        return "File Upload Completed"
+        flash('File uploaded successfully!')  # Flash a message
+        return redirect(url_for('uploadStuff'))
 
 #function for restriction of file types
 def permittedFiles(filename):
