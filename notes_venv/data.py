@@ -12,7 +12,7 @@ import logging
 EXTENSIONS = {'png', 'jpg', 'txt', 'pdf', 'doc', 'docx', 'zip', 'tar', 'rar'}
 
 #initialize flask application and then refer the instance as app
-app = Flask(__name__) 
+app = Flask(__name__)
 
 UPLOAD_FOLDER = 'uploads' #creates the directory
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER #configer an upload folder for where we can store the uploads sent from the HTML file upload
