@@ -27,9 +27,17 @@ def index():
     return render_template('index.html')
 
 #routing for our sub-pages on the website
-@app.route('/pages')
+@app.route('/uploading')
 def another():
     return render_template('subFolder/upload.html')
+
+@app.route('/about')
+def another2():
+    return render_template('subFolder/about.html')
+
+@app.route('/idx')
+def index2():
+    return render_template('index.html')
 
 
 #file uploading handling, we will set a limit to 16 MB for now
