@@ -78,8 +78,9 @@ main{
 .about-title{
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     margin-top: 0;
-    height: 100vh;
+    height: auto;
     font-size: 5rem;
-    padding-right: 4rem;
+    
 }
