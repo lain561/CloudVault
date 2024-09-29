@@ -19,7 +19,7 @@ body{
     font-family: Arial, sans-serif;
 }
 
-h1, h3, p, a, img, label{
+h1, h3, p, a, img, label, p1, .about-title{
     color: aliceblue; 
     text-shadow: 0 0 10px aliceblue; 
     font-weight: 1;
@@ -71,6 +71,16 @@ main{
     animation: fadeIn 1.5s forwards;
 }
 
-.name, .logo-name, .slogan{
+.name, .logo-name, .slogan, .about-title{
     font-family: 'GameOfSquids';
+}
+
+.about-title{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 0;
+    height: auto;
+    font-size: 5rem;
+    
 }
