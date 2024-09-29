@@ -81,6 +81,28 @@ main{
     align-items: flex-start;
     margin-top: 0;
     height: auto;
-    font-size: 5rem;
-    
+    font-size: 5rem;  
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.about-content{
+    border-width: 2px;
+    border-color: rgba(240, 248, 255, 0.713);
+    border-style: solid;
+    border-radius: 20px;
+    background-color: #1654aa4d;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    top: 20px;
+    font-size: 2rem;
+    word-spacing: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
 }

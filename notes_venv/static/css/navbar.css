@@ -30,13 +30,36 @@ nav a{
     font-weight: 1;
     text-decoration: none;
     font-size: 1.5rem;
-    display: block;
+    display: inline-block;
+    position: relative;
+    transition: font-size 0.3s ease;
 }
 
 .logo-name img{
     width: 30%;
     padding-right: 15px;
 }
+
+a:after{
+    content: "";
+    position: absolute;
+    background-color: aliceblue;
+    height: 2px;
+    width: 0;
+    transition: width 0.3s;
+    left: 0;
+    bottom: -2px;
+
+}
+
+nav a:hover:after{
+    width: 100%
+}
+
+nav a:hover{
+    font-size: 1.6rem;
+}
+
 
 @keyframes fadeIn {
     100% {opacity: 100%; transform: translateY(10px);}
