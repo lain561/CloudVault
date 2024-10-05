@@ -1,6 +1,7 @@
 # what we use wolfi for in here:
 # Minimal base images, the use of a non-root user, 
 # and a focus on only including necessary components.
+#We also use volumes to hold the files even when the container is not running
 
 FROM cgr.dev/chainguard/wolfi-base
 
