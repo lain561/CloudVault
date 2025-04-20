@@ -1,14 +1,19 @@
-# Ignore virtual environments
+# Ignore the virtual environment
 notes_venv/
-venv/
 .venv/
-env/
-ENV/
+private_key.pem
 
-# Ignore Python bytecode and cache files
+# Ignore Python cache and compiled files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Optional: ignore certs or secrets (only if you don't want to track them)
-# certificate.pem
+# Distribution/packaging stuff (optional)
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# VSCode or IDE settings (optional)
+.vscode/
+.idea/
