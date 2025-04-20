@@ -72,4 +72,4 @@ if __name__ == "__main__":
     try:
         app.run(ssl_context=('certificate.pem', 'private_key.pem'), debug=True, host='0.0.0.0', port=5500) #I created a self-certificate for HTTPS. We now have SSL implemented
     except Exception as e:
-        print(f"Error: {e}") 
+        print(f"Error: {e}")    
