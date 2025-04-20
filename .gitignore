@@ -1,1 +1,14 @@
-.venv
+# Ignore virtual environments
+notes_venv/
+venv/
+.venv/
+env/
+ENV/
+
+# Ignore Python bytecode and cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Optional: ignore certs or secrets (only if you don't want to track them)
+# certificate.pem
